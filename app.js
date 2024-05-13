@@ -5,11 +5,12 @@ dotenv.config();
 const app = express();
 const port = 3000;
 
+app.use(express.json());
 app.use(express.static("public"));
 
-// app.post('/mail', (req, res) => {
-//   console.log("mail button clicked");
-// });
+app.post('/mail', (req, res) => {
+  console.log("mail button clicked");
+});
 
 app.listen(port, () => {
   console.log(process.env.SENSITIVE_INFO);
