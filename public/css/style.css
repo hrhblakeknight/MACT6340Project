@@ -7,3 +7,46 @@ html {
 #testButton {
     background-color: red;
 }
+
+body {
+    background-color: teal;
+}
+
+.area {
+    min-height: 750px;
+}
+
+.spacer { 
+    min-height: 75px;
+}
+
+#splash { 
+    min-height: 800px;
+}
+
+/* Regular weight for body text */
+.open-sans-regular {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Normal weight */
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+  }
+  
+  /* Bold weight for headings */
+  .open-sans-bold {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700; /* Bold weight */
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+  }
+  
+  /* Italic style for emphasis */
+  .open-sans-italic {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Normal weight */
+    font-style: italic;
+    font-variation-settings: "wdth" 100;
+  }  
