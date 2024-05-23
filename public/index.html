@@ -15,62 +15,89 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body> 
-    <!-- Header -->
+
     <header class="bg-dark py-3">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark">
-                <a class="navbar-brand" href="#">Blake Knight</a>
+                <a class="navbar-brand" href="#">
+                    <img src="./images/favicon.ico" alt="Favicon" style="height: 30px;">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#projects">Projects</a>
+                            <a class="nav-link" href="#projects">Featured</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
+                            <a class="nav-link" href="projects.html">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">Artist</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact</a>
                         </li>
                     </ul>
+                    <button class="btn btn-primary ms-auto">Wallet</button>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Splash Image and Title -->
-    <section class="text-center bg-light py-5">
-        <h1>Welcome to My NFT Portfolio</h1>
-        <img src="public/images/splash-image.png" class="img-fluid" alt="Splash Image">    </section>
-
-    <!-- Featured Project -->
-    <section id="projects" class="container py-5">
-        <h2>Featured Project</h2>
-        <p>Check out my featured NFT work!</p>
-        <a href="projects.html" class="btn btn-primary">View All Projects</a>
-    </section>
-
-    <!-- About Area -->
-    <section id="about" class="bg-secondary text-white py-5">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Blake Knight is a multifaceted creative professional based in Los Angeles. With a rich background in multimedia design, creative writing, and communications, Blake has honed his skills across various creative industries, using words to crystalize emotions via creative experiences. Outside of professional endeavors, Blake is an avid gamer, artist, and gardener, and enjoys hosting dinner parties and traveling to destinations like Italy and Iceland. Currently pursuing a master's degree in creative technology, Blake is exploring the frontiers of AI, digital design, AR, and VR, preparing to shape the future of interactive media.</p>
+    <section class="text-center bg-light position-relative">
+        <img src="images/splash-image.png" class="img-fluid" alt="Splash Image">
+        <div class="overlay-text">
+            <h1>BLAKE KNIGHT</h1>
+            <p>NFT Mint Portfolio</p>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
+    <section id="projects" class="container py-5">
+        <div class="row">
+            <div class="col-md-3">
+                <h2>Featured Project</h2>
+                <h1>INCONGRUOUS ELEMENTS</h1>
+                <p>Incongruous Elements is a captivating exploration of nature’s fragments through the lens of 3D animation. By merging various natural objects and simulating dynamic effects such as smoke, fabric movement, and fire, this project emphasizes the unexpected beauty in their coexistence. Each piece is a testament to the skillful integration of these elements, transforming them into a cohesive and mesmerizing visual experience. It is the hopes of the artist that he will market these unique NFT pieces in tandem with Muse frame technologies.
+                </p>
+                <a href="project.html" class="btn btn-primary">View Incongruous Elements</a>
+            </div>
+            <div class="col-md-3">
+                <img src="images/img4.png" class="img-fluid" alt="Image 4">
+            </div>
+            <div class="col-md-3">
+                <img src="images/img9.png" class="img-fluid" alt="Image 9">
+            </div>
+            <div class="col-md-3">
+                <img src="images/img10.png" class="img-fluid" alt="Image 10">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="bg-secondary text-white py-5">
         <div class="container">
-            © 2024 Blake Knight. All Rights Reserved.
+            <h2>About the Artist</h2>
+            <p>Blake Knight is a multifaceted creative professional based in Los Angeles. With a rich background in multimedia design, creative writing, and communications, Blake has honed his skills across various creative industries, using words to crystallize emotions via creative experiences. Outside of professional endeavors, Blake is an avid gamer, artist, and gardener, and enjoys hosting dinner parties and traveling to destinations like Italy and Iceland. Currently pursuing a master's degree in creative technology, Blake is exploring the frontiers of AI, digital design, AR, and VR, preparing to shape the future of interactive media.</p>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container d-flex justify-content-between">
+            <div>
+                © 2024 Blake Knight. All Rights Reserved.
+            </div>
+            <div class="footer-icons">
+                <a href="https://www.instagram.com/sir.rend3r">
+                    <img src="./images/instagram-icon.png" alt="Instagram" style="width: 40px; margin-right: 15px;">
+                </a>
+                <a href="https://www.linkedin.com/in/hrhblakeknight/">
+                    <img src="./images/linkedin-icon.png" alt="LinkedIn" style="width: 40px;">
+                </a>
+            </div>
         </div>
     </footer>
 
-    <!-- Existing Button and Scripts -->
-    <div class="container">
-        <div id="testButton" class="m-2 btn btn-warning">Please click me</div>
-    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script type="module" src="./js/index.js"></script>
 </body>

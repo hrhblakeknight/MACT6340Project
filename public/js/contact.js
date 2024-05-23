@@ -1,51 +1,46 @@
 (function () {
-    "use strict";
-  
-    let form = document.querySelector("#contact-form");
-  
-    document.querySelector("#send-contact").addEventListener("click", (event) => {
+  "use strict";
+
+  let form = document.querySelector("#contact-form");
+
+  form.addEventListener("submit", function(event) {
       event.preventDefault();
       event.stopPropagation();
-      let formValid = true;
-      if (!form.checkValidity()) {
-        formValid = false;
-      }
+      
+      let formValid = form.checkValidity();
       form.classList.add("was-validated");
+      
       if (formValid) {
-        sendTheEmail();
+          sendTheEmail();
       }
-    });
-  
-    function sendTheEmail() {
+  });
+
+  function sendTheEmail() {
       let obj = {
-        sub: "Someone submitted a contact form!",
-        txt: `${document.querySelector("#contact-first").value} ${
-          document.querySelector("#contact-middle").value
-        } ${
-          document.querySelector("#contact-last").value
-        } sent you a message that reads ${
-          document.querySelector("#contact-question").value
-        }. They're email address is ${
-          document.querySelector("#contact-email-addr").value
-        }`,
+          sub: "Someone submitted a contact form!",
+          txt: `First Name: ${document.querySelector("#contact-first").value}, ` +
+               `Last Name: ${document.querySelector("#contact-last").value}, ` +
+               `Email: ${document.querySelector("#contact-email-addr").value}, ` +
+               `Message: ${document.querySelector("#contact-question").value}`
       };
-  
+
       fetch("/mail", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify(obj),
+          method: "POST",
+          headers: {
+              "Content-type": "application/json",
+          },
+          body: JSON.stringify(obj),
       })
-        .then((r) => r.json())
-        .then((response) => {
-          document.querySelector("#contact-button-response").innerHTML =
-            response.result;
-        })
-        .then(() => {
+      .then(response => response.json())
+      .then(data => {
+          document.querySelector("#contact-button-response").textContent = data.message;
           setTimeout(() => {
-            document.querySelector("#contact-button-response").innerHTML = "";
-          }, "5000");
-        });
-    }
-  })();
+              document.querySelector("#contact-button-response").textContent = "";
+          }, 5000);
+      })
+      .catch(error => {
+          console.error('Error:', error);
+          document.querySelector("#contact-button-response").textContent = 'Failed to send message';
+      });
+  }
+})();
