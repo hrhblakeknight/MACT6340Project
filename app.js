@@ -12,16 +12,22 @@ app.set("views", "./views");
 app.use(express.json());
 app.use(express.static("public"));
 
+const projectArray = [
+    { title: "Project 1", description: "Description of project 1" },
+    { title: "Project 2", description: "Description of project 2" },
+    { title: "Project 3", description: "Description of project 3" }
+];
+
 app.get("/", (req, res) => {
-    res.render("index.ejs");
+    res.render("index");
 });
 
 app.get("/projects", (req, res) => {
-    res.render("projects.ejs");
+    res.render("projects", { projectArray });
 });
 
 app.get("/contact", (req, res) => {
-    res.render("contact.ejs");
+    res.render("contact");
 });
 
 const transporter = nodemailer.createTransport({
