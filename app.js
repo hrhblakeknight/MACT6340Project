@@ -1,7 +1,9 @@
 import express from "express"; 
 import dotenv from "dotenv";
 import nodemailer from 'nodemailer'; 
+import * as utils from "./utils/utils.js";
 dotenv.config(); 
+import * as db from "./utils/database.js";
 
 const app = express();
 const port = 3000;
@@ -12,18 +14,25 @@ app.set("views", "./views");
 app.use(express.json());
 app.use(express.static("public"));
 
-const projectArray = [
-    { title: "Project 1", description: "Description of project 1" },
-    { title: "Project 2", description: "Description of project 2" },
-    { title: "Project 3", description: "Description of project 3" }
-];
-
-app.get("/", (req, res) => {
-    res.render("index");
+app.get("/", async (req, res) => {
+    await db.connect();
+    let projects = await db.getAllProjects();
+    projects = projects.map(project => ({
+        ...project,
+        img_url: project.img_url.replace('./public', '')
+    }));
+    console.log(projects);
+    res.render("index.ejs", { data: projects });
 });
 
-app.get("/projects", (req, res) => {
-    res.render("projects", { projectArray });
+app.get("/projects", async (req, res) => {
+    await db.connect();
+    let projects = await db.getAllProjects();
+    projects = projects.map(project => ({
+        ...project,
+        img_url: project.img_url.replace('./public', '')
+    }));
+    res.render("projects.ejs", { data: projects });
 });
 
 app.get("/contact", (req, res) => {
