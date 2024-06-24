@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <title>Project</title>
     <meta name="author" content="Blake Knight">
     <meta name="description" content="A page for one Project.">
@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <style>
         body {
             background-color: #18392B; 
@@ -28,35 +28,7 @@
 </head>
 <body> 
 
-    <header class="bg-dark py-3">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <a class="navbar-brand" href="/#splash">
-                    <img src="./images/favicon.ico" alt="Favicon" style="height: 30px;">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/#projects">Featured</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/projects">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/#about">Artist</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/contact">Contact</a>
-                        </li>
-                    </ul>
-                    <button class="btn btn-primary ms-auto">Wallet</button>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <%- include('header'); %>
 
     <section class="container py-5 project-description">
         <h2 class="mb-4">INCONGRUOUS ELEMENTS</h2>
@@ -67,61 +39,47 @@
     <section class="container py-5">
         <div class="row">
             <div class="col-md-4 mb-4">
-                <img src="images/img1.png" class="img-fluid" alt="Image 1">
+                <img src="/images/img1.png" class="img-fluid" alt="Image 1">
                 <p class="mt-2">001 - orchids, glass marbles, gosh mesh</p>
             </div>
             <div class="col-md-4 mb-4">
-                <img src="images/img2.png" class="img-fluid" alt="Image 2">
+                <img src="/images/img2.png" class="img-fluid" alt="Image 2">
                 <p class="mt-2">002 - jade orb, fishnet mesh, smoking oak</p>
             </div>
             <div class="col-md-4 mb-4">
-                <img src="images/img3.png" class="img-fluid" alt="Image 3">
+                <img src="/images/img3.png" class="img-fluid" alt="Image 3">
                 <p class="mt-2">003 - mahogany sphere, large pearl, Moroccan fabric</p>
             </div>
             <div class="col-md-4 mb-4">
-                <img src="images/img4.png" class="img-fluid" alt="Image 4">
+                <img src="/images/img4.png" class="img-fluid" alt="Image 4">
                 <p class="mt-2">004 - seaglass, silk, emerald, jade</p>
             </div>
             <div class="col-md-4 mb-4">
-                <img src="images/img5.png" class="img-fluid" alt="Image 5">
+                <img src="/images/img5.png" class="img-fluid" alt="Image 5">
                 <p class="mt-2">005 - driftwood, gause, gold beads, fire agate</p>
             </div>
             <div class="col-md-4 mb-4">
-                <img src="images/img6.png" class="img-fluid" alt="Image 6">
+                <img src="/images/img6.png" class="img-fluid" alt="Image 6">
                 <p class="mt-2">006 - brass cage, orchids, flame, palo santo</p>
             </div>
             <div class="col-md-4 mb-4">
-                <img src="images/img7.png" class="img-fluid" alt="Image 7">
+                <img src="/images/img7.png" class="img-fluid" alt="Image 7">
                 <p class="mt-2">007 - amber hexahedron, phoenix feather, driftwood</p>
             </div>
             <div class="col-md-4 mb-4">
-                <img src="images/img8.png" class="img-fluid" alt="Image 8">
+                <img src="/images/img8.png" class="img-fluid" alt="Image 8">
                 <p class="mt-2">008 - quartz, lavendar, silver bead, rope</p>
             </div>
             <div class="col-md-4 mb-4">
-                <img src="images/img9.png" class="img-fluid" alt="Image 9">
+                <img src="/images/img9.png" class="img-fluid" alt="Image 9">
                 <p class="mt-2">009 - silk stocking, leg, pearl, ruby</p>
             </div>
         </div>
     </section>
 
-    <footer class="bg-dark text-white text-center py-3">
-        <div class="container d-flex justify-content-between">
-            <div>
-                © 2024 Blake Knight. All Rights Reserved.
-            </div>
-            <div class="footer-icons">
-                <a href="https://www.instagram.com/sir.rend3r">
-                    <img src="./images/instagram-icon.png" alt="Instagram" style="width: 40px; margin-right: 15px;">
-                </a>
-                <a href="https://www.linkedin.com/in/hrhblakeknight/">
-                    <img src="./images/linkedin-icon.png" alt="LinkedIn" style="width: 40px;">
-                </a>
-            </div>
-        </div>
-    </footer>
+    <%- include('footer'); %>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script type="module" src="./js/index.js"></script>
+    <script type="module" src="/js/index.js"></script>
 </body>
 </html>
