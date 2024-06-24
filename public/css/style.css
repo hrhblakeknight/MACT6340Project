@@ -130,6 +130,24 @@ body {
     word-wrap: break-word;
 }
 
+@media (max-width: 992px) {
+    .project-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .project-title {
+        font-size: 1.5rem;
+    }
+}
+
 .project-image {
     width: 100%;
     height: auto;
@@ -137,9 +155,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    .project-title {
-        font-size: 2rem;
-    }
     .col-md-6 {
         margin-bottom: 1rem;
     }
