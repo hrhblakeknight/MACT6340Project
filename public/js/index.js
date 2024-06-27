@@ -3,27 +3,32 @@
 document.addEventListener("DOMContentLoaded", () => {
   let userAddress = null;
   let connect = document.querySelector("#wallet-connect");
-  let isPending = false; // State to track if a request is pending
+  let isPending = false;
 
-  // Check if MetaMask is already connected
+  // if (window.ethereum) {
+  //   connectWallet();
+  // } else {
+  //   userAddress = null;
+  //   connect.innerHTML = "Connect Wallet";
+  // }
+
   if (typeof window.ethereum !== 'undefined' && window.ethereum.selectedAddress) {
     userAddress = window.ethereum.selectedAddress;
     let walletString = userAddress.substring(0, 5) + "..." + userAddress.substring(38, 42);
     connect.innerHTML = walletString;
   }
 
-  // Event listener for the button
   connect.addEventListener("click", async () => {
-    if (!isPending && !window.ethereum.isConnected()) {
+    if (!isPending && typeof window.ethereum !== 'undefined') {
       connectWallet();
     }
   });
 
   async function connectWallet() {
     if (typeof window.ethereum !== 'undefined') {
-      isPending = true; // Set the state to pending
-      connect.disabled = true; // Disable the button
-      connect.innerHTML = "Connecting..."; // Show loading text
+      isPending = true;
+      connect.disabled = true;
+      connect.innerHTML = "Connecting...";
 
       try {
         const data = await window.ethereum.request({ method: "eth_requestAccounts" });
@@ -38,16 +43,16 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           console.error(err);
         }
-        connect.innerHTML = "Connect Wallet"; // Reset button text
+        connect.innerHTML = "Connect Wallet";
       } finally {
-        isPending = false; // Clear the pending state
-        connect.disabled = false; // Re-enable the button
+        isPending = false;
+        connect.disabled = false;
       }
     } else {
       console.log("MetaMask is not installed.");
-      isPending = false; // Clear the pending state
-      connect.disabled = false; // Re-enable the button
-      connect.innerHTML = "Connect Wallet"; // Reset button text
+      isPending = false;
+      connect.disabled = false;
+      connect.innerHTML = "Connect Wallet";
     }
   }
 });

@@ -81,6 +81,15 @@ app.get('/test-mail', (req, res) => {
     });
 });
 
+app.use((req, res, next) => {
+    res.status(404).send("This developer is an IDIOT and hasn't coded this page yet!");
+});
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
+
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });

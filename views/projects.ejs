@@ -23,7 +23,7 @@
         <h2>Projects</h2>
         <div class="row">
             <% data.forEach((item, index) => { %>
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4">
                     <%- include('projectCard', { id: item.id, image: item.img_url, name: item.project_name }); %>
                 </div>
             <% }); %>
