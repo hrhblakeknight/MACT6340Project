@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import nodemailer from 'nodemailer';
 import * as utils from "./utils/utils.js";
 import * as db from "./utils/database.js";
-import cors from 'cors'; // Import CORS
+import cors from "cors"; // import CORS
 
 dotenv.config();
 
@@ -16,7 +16,7 @@ const port = 3000;
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
-app.use(cors()); // Enable CORS
+app.use(cors()); // enable CORS
 app.use(express.json());
 app.use(express.static("public"));
 

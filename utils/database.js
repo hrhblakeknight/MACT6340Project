@@ -1,16 +1,35 @@
 import mysql from "mysql2";
 import dotenv from "dotenv";
+import fs from "fs";
 dotenv.config();
 
 let pool;
 
 export async function connect() {
-    pool = mysql.createPool({
-        host: process.env.MYSQL_HOST,
-        user: process.env.MYSQL_USER,
-        password: process.env.MYSQL_PASSWORD,
-        database: process.env.MYSQL_DATABASE,  // Ensure the database name is specified here
-    }).promise();
+    let cString = 
+        "mysql://" +
+        process.env.MYSQL_USER + 
+        ":" +
+        process.env.MYSQL_PASSWORD +
+        "@" +
+        process.env.MYSQL_HOST +
+        ":" +
+        process.env.MYSQL_PORT +
+        "/" +
+        process.env.MYSQL_DATABASE;
+
+    pool = mysql
+        .createPool(
+        cString //digital ocean SQL server
+        //{
+            // obj - localhost SQL
+            // host: process.env.MYSQL_HOST, 
+            // user: process.env.MYSQL_USER, 
+            // password: process.env.MYSQL_PASSWORD, 
+            // database: process.env.MYSQL_DATABASE,
+        //}
+    )
+    .promise();
 }
 
 export async function getAllProjects() {

@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/hrhblakeknight/MACT6340Project#readme",
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.4"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -28,6 +28,6 @@
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "mysql2": "^3.10.1",
-    "nodemailer": "^6.9.13"
+    "nodemailer": "^6.9.14"
   }
 }
